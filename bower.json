@@ -1,0 +1,27 @@
+{
+  "name": "gulp-app",
+  "description": "Template de projeto padrão utilizando Gulp e Bower",
+  "main": "index.js",
+  "authors": [
+    "David Alves"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "gulp",
+    "bower",
+    "web",
+    "boilerplate"
+  ],
+  "homepage": "github.com/davidalves1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.5"
+  }
+}
