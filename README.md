@@ -1,3 +1,3 @@
-<<<<<<< HEAD
 # leitor-ocorren
->>>>>>> 907c94ffd46198ece11badbb5f3f96ccdda0061b
+
+Realiza a leitura do arqivo OCORREN do padrão PROCEDA retornando os dados de forma legível ao usuário.
