@@ -1,16 +1,15 @@
 {
-  "name": "gulp-app",
-  "description": "Template de projeto padrão utilizando Gulp e Bower",
+  "name": "leitor-ocorren",
+  "description": "Leitor dos arquivos Ocorren do padrão PROCEDA",
   "main": "index.js",
   "authors": [
     "David Alves"
   ],
   "license": "ISC",
   "keywords": [
-    "gulp",
-    "bower",
-    "web",
-    "boilerplate"
+    "proceda",
+    "ocorren",
+    "transporte"
   ],
   "homepage": "github.com/davidalves1",
   "ignore": [

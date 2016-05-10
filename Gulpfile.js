@@ -17,7 +17,7 @@ gulp.task('minjs', function() {
         // Realiza minificação
         .pipe(uglify())
         // Altera a extenção do arquivo
-        .pipe(concat('main.min.js'))
+        .pipe(concat('app.min.js'))
         // Salva os arquivos minificados na pasta de destino
         .pipe(gulp.dest('dist/js'));
 });
