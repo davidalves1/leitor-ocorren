@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html>
     <head>
         <meta charset="utf-8">
         <title>Ocorren Reader</title>
@@ -7,22 +7,20 @@
         <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
     </head>
     <body>
-        <div class="container" ng-controller="appController">
+        <div class="container">
             <div class="row">
                 <div class="jumbotron col-md-12">
                     <div class="col-md-offset-3 col-md-6 text-center">
                         <h1>Leitor Ocorren</h1>
                         <h2 class="text-center">Selecione o arquivo:</h2>
                         <br>
-                        <input type="file" id="inputArquivo" onchange="obterArquivo(this)">
+                        <input type="file" id="inputArquivo" onchange="obterArquivo(this)" accept=".txt">
                         <hr>
                         <div id="exibeArquivo" class="mt-20"></div>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="libs/jquery/dist/jquery.min.js"></script>
-        <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="dist/js/app.min.js"></script>
     </body>
 </html>
