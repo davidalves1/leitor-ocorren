@@ -3,23 +3,28 @@
     <head>
         <meta charset="utf-8">
         <title>Ocorren Reader</title>
-        <link rel="stylesheet" href="dist/css/style.min.css">
         <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="dist/css/style.min.css">
     </head>
     <body>
-        <div class="container">
-            <div class="row">
-                <div class="jumbotron col-md-12">
-                    <div class="col-md-offset-3 col-md-6 text-center">
-                        <h1>Leitor Ocorren</h1>
-                        <h2 class="text-center">Selecione o arquivo:</h2>
-                        <br>
-                        <input type="file" id="inputArquivo" onchange="obterArquivo(this)" accept=".txt">
-                        <hr>
-                        <div id="exibeArquivo" class="mt-20"></div>
-                    </div>
+        <div class="container-app">
+            <div class="reader-ocorren">
+                <div class="reader-ocorren__title">
+                    <h1>Leitor Ocorren</h1>
+                </div>
+                <div class="reader-ocorren__upload">
+                    <p><a href="#">Selecione</a> ou Arraste seu arquivo para aqui.</p>
+                    <input type="file" id="inputArquivo" onchange="obterArquivo(this)">
+                </div>
+                <div class="reader-ocorren__data">
+                    
+                </div>
+                <div class="reader-ocorren__error">
+                    <p>Formato de arquivo inválido.</p>
                 </div>
             </div>
+
+            <button class="btn btn-block btn--blue mt-20 hidden">Nova leitura</button>
         </div>
         <script src="dist/js/app.min.js"></script>
     </body>
