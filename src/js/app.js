@@ -6,9 +6,29 @@ window.onload = function init() {
     fileReader.onload = lerArquivo;
 };
 
+var error = document.getElementsByClassName('reader-ocorren__error')[0];
+var areaUpload = document.getElementsByClassName('reader-ocorren__upload')[0];
+var btnNewReader = document.getElementsByClassName('btn--blue')[0];
+var exibeArquivo = document.getElementsByClassName('reader-ocorren__data')[0];
+
+function displayError(msg) {
+    error.style.height = '100%';
+    error.innerHTML = '<p>' + msg + '</p>';
+
+    setTimeout(function() {
+        error.style.height = '0px';
+    }, 3000);
+}
+
 // Função para chamar a leitura do arquivo ao carregá-lo
 function obterArquivo(inputArquivo) {
     var arquivo = inputArquivo.files[0];
+
+    if(arquivo.type !== 'text/plain') {
+        displayError('Formato de arquivo inválido!');
+        return;
+    }
+
     fileReader.readAsText(arquivo);
 }
 
@@ -19,13 +39,13 @@ function lerArquivo(e) {
 
     // Monta a div que irá exibir os dados
     var cnpj = fileArr[2].slice(3, 17);
-    var div = '<p>CNPJ: ' + formataCnpj(cnpj) + '</p>';
+    var div = '<p><strong>CNPJ:</strong> ' + formataCnpj(cnpj) + '</p>';
 
-    div += '<p>Transportadora: ' + fileArr[2].slice(17, 57) + '</p>';
+    div += '<p><strong>Transportadora:</strong> ' + fileArr[2].slice(17, 57) + '</p>';
 
     div += '<div class="panel panel-default">';
     div += '<div class="panel-heading">Ocorrências</div>';
-    div += '<table class="table"><thead><th>Código</th><th>Descrição</th></thead>';
+    div += '<table class="table no-"><thead><th>Código</th><th>Descrição</th></thead>';
 
     // Passa em cada linha do arquivo
     for (var i = 0; i < fileArr.length; i++) {
@@ -49,12 +69,20 @@ function lerArquivo(e) {
     div += '</table>';
 
     // Seta a div montada com os dados
-    var exibeArquivo = document.getElementById('exibeArquivo')
+    areaUpload.classList.add('hidden');
+    btnNewReader.classList.remove('hidden');
+    
 
     // Exibe os dados
     exibeArquivo.innerHTML = div;
 
 };
+
+btnNewReader.addEventListener('click', function() {
+    areaUpload.classList.remove('hidden');
+    btnNewReader.classList.add('hidden');
+    exibeArquivo.innerHTML = '';
+});
 
 var formataCnpj = function(cnpj) {
     return cnpj.slice(0, 2) + '.' +
